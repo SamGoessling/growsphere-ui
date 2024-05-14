@@ -1,0 +1,225 @@
+// Import Bootstrap's functions, variables, and mixins
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+// Your custom styles and overrides
+body {
+  color: black;
+  font-family: $font-family-base;
+  //background: linear-gradient(to top, #b6b6b6, #90fdc6);
+  background: #b0d8c4;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.custom-navbar {
+  background-color: #000;
+  color: $white;
+  padding-right: 10px;
+  padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  a {
+    color: $white;
+    &:hover {
+      color: #00ff80;
+    }
+  }
+}
+
+.home-container {
+  position: relative;
+  width: 100%;
+}
+
+.cover-photo {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(60%);
+}
+
+// Apply hover effect globally to all links
+a {
+  transition: color 0.3s ease-in-out;
+  &:hover {
+    color: #00ff80;
+  }
+}
+
+// Media queries
+@media (max-width: map-get($grid-breakpoints, md)) {
+  .navbar-nav {
+    background-color: $gray-800;
+  }
+  .cover-photo {
+    max-height: 300px;
+  }
+}
+
+.container, .container-fluid {
+  padding: 0;
+  margin: 0;
+}
+
+.jumbotron {
+  padding-top: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 2rem;
+}
+
+.userform-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-container.card {
+  max-width: 350px;
+  padding: 40px 40px;
+  background-color: $black;
+  color: $white;
+  margin: 2rem auto;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+}
+
+.error {
+  color: $danger;
+  padding: 0.5rem;
+}
+
+.profile-page {
+  .profile-card {
+    background-color: $white;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: $border-radius;
+    box-shadow: 0 0.5rem 1rem rgba($black, .15);
+
+    .profile-header {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .profile-details {
+      text-align: left;
+      line-height: 1.6;
+
+      strong {
+        color: $black;
+      }
+    }
+
+    ul {
+      padding-left: 20px;
+      list-style-type: none;
+
+      li {
+        margin-bottom: 0.25rem;
+      }
+    }
+  }
+}
+
+.site-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
+
+
+.about-page {
+  .card {
+    background-color: $white;
+    margin-top: 3rem;
+    padding: 2rem;
+    border-radius: $border-radius;
+    box-shadow: 0 4px 8px rgba($black, .1);
+
+    .card-title {
+      color: $primary;
+    }
+
+    h2 {
+      color: $dark;
+      padding-top: 2rem;
+    }
+
+    p, ul {
+      color: $gray-700;
+      line-height: 1.7;
+    }
+
+    ul {
+      padding-left: 1rem;
+    }
+  }
+}
+
+.footer-48201 {
+  padding: 2rem 0;
+  background-color: #000;
+  color: #777;
+
+  .footer-site-logo {
+    font-size: 1.5rem;
+    color: $white;
+  }
+
+  a, .nav-links a {
+    text-decoration: none; // Ensures all links inside the footer have no underline
+    color: darken($white, 50%);
+    &:hover {
+      color: #00ff80;
+      text-decoration: none; // Important to add this if hover effects reapply the underline
+    }
+  }
+
+  .nav-links {
+    li {
+      text-align: left;
+      margin-bottom: 8px;
+    }
+  }
+
+  .copyright {
+    border-top: 1px solid darken($white, 75%);
+  }
+}
+
+.additional-info {
+  padding: 20px;
+  background-color: #e9ecef;
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 1.6;
+}
